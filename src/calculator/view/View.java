@@ -6,6 +6,7 @@ import java.awt.*;
 public class View {
 
     private JFrame mainWindow;
+    private DisplayPanel displayPanel;
 
     public View() {
         initMainWindow();
@@ -17,10 +18,8 @@ public class View {
         mainWindow.setResizable(false);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.setLayout(new BorderLayout());
-
-
-
+        displayPanel = new DisplayPanel();
+        mainWindow.add(displayPanel,BorderLayout.NORTH);
         mainWindow.setVisible(true);
-
     }
 }
