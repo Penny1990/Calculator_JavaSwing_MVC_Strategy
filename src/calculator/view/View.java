@@ -7,6 +7,7 @@ public class View {
     private JFrame mainWindow;
     private DisplayPanel displayPanel;
     private ButtonPanel buttonPanel;
+    private SpecialButtonPanel specialButtonPanel;
 
     public View() {
         initMainWindow();
@@ -21,9 +22,11 @@ public class View {
 
         displayPanel = new DisplayPanel();
         buttonPanel = new ButtonPanel();
+        specialButtonPanel = new SpecialButtonPanel();
 
         mainWindow.add(displayPanel,BorderLayout.NORTH);
         mainWindow.add(buttonPanel, BorderLayout.CENTER);
+        mainWindow.add(specialButtonPanel, BorderLayout.SOUTH);
 
         mainWindow.setVisible(true);
     }
