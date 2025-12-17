@@ -15,11 +15,10 @@ public class ButtonPanel extends JPanel {
 
     private void initButtons() {
         numberButtons = new JButton[10];
-        Font defaultFont = new Font("Comic Sans", Font.BOLD, 30);
 
         for (int i = 0; i < numberButtons.length; i++) {
             numberButtons[i] = new JButton(String.valueOf(i));
-            numberButtons[i].setFont(defaultFont);
+            numberButtons[i].setFont(View.DEFAULT_FONT);
             numberButtons[i].setFocusable(false); // Button Hervorhebung weg nehmen
 
             // TODO: Alle Buttons brauchen ihren Listener
