@@ -4,29 +4,28 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DisplayPanel extends JPanel {
-
-    private JTextField txt_display;
+    private JTextField txtDisplay;
 
     public DisplayPanel() {
         initDisplayPanel();
     }
 
     private void initDisplayPanel() {
-        txt_display = new JTextField();
-        txt_display.setFont(new Font("Comic Sans", Font.BOLD, 30));
-        txt_display.setHorizontalAlignment(JTextField.RIGHT); // rechtsbündig
-        txt_display.setEditable(false); // Textfeld nicht editierbar
+        txtDisplay = new JTextField();
+        txtDisplay.setFont(new Font("Comic Sans", Font.BOLD, 30));
+        txtDisplay.setHorizontalAlignment(JTextField.RIGHT); // rechtsbündig
+        txtDisplay.setEditable(false); // Textfeld nicht editierbar
 
         setLayout(new BorderLayout());
-        add(txt_display, BorderLayout.CENTER);
+        add(txtDisplay, BorderLayout.CENTER);
     }
 
     public void setDisplayText(String text) {
-        this.txt_display.setText(text);
+        this.txtDisplay.setText(text);
     }
 
     public String getDisplayText() {
-        return txt_display.getText();
+        return txtDisplay.getText();
     }
 
     public void clearDisplay() {

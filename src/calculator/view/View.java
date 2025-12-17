@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class View {
-
     private JFrame mainWindow;
     private DisplayPanel displayPanel;
+    private ButtonPanel buttonPanel;
 
     public View() {
         initMainWindow();
@@ -18,8 +18,13 @@ public class View {
         mainWindow.setResizable(false);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.setLayout(new BorderLayout());
+
         displayPanel = new DisplayPanel();
+        buttonPanel = new ButtonPanel();
+
         mainWindow.add(displayPanel,BorderLayout.NORTH);
+        mainWindow.add(buttonPanel, BorderLayout.CENTER);
+
         mainWindow.setVisible(true);
     }
 }
