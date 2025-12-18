@@ -12,7 +12,7 @@ public class DisplayPanel extends JPanel {
 
     private void initDisplayPanel() {
         txtDisplay = new JTextField();
-        txtDisplay.setFont(View.DEFAULT_FONT);
+        txtDisplay.setFont(CalculatorView.DEFAULT_FONT);
         txtDisplay.setHorizontalAlignment(JTextField.RIGHT); // rechtsbündig
         txtDisplay.setEditable(false); // Textfeld nicht editierbar
 

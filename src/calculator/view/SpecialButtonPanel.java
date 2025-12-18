@@ -20,7 +20,7 @@ public class SpecialButtonPanel extends JPanel {
 
     private JButton createButton(String text) {
         JButton button = new JButton(text);
-        button.setFont(View.DEFAULT_FONT);
+        button.setFont(CalculatorView.DEFAULT_FONT);
         button.setFocusable(false);
 
         // TODO: Listener für die Buttons hinzufügen

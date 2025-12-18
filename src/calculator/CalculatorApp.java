@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.view.View;
+import calculator.view.CalculatorView;
 
 import javax.swing.*;
 
@@ -24,7 +24,7 @@ public class CalculatorApp {
         */
 
         // Methodenreferenz möglich:
-        SwingUtilities.invokeLater(View::new);
+        SwingUtilities.invokeLater(CalculatorView::new);
 
         /*
 

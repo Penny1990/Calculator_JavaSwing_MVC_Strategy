@@ -3,7 +3,7 @@ package calculator.view;
 import javax.swing.*;
 import java.awt.*;
 
-public class View {
+public class CalculatorView {
     public static final Font DEFAULT_FONT = new Font("Comic Sans", Font.BOLD, 30);
 
     private JFrame mainWindow;
@@ -11,7 +11,7 @@ public class View {
     private ButtonPanel buttonPanel;
     private SpecialButtonPanel specialButtonPanel;
 
-    public View() {
+    public CalculatorView() {
         initMainWindow();
     }
 
