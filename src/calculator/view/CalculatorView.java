@@ -33,4 +33,22 @@ public class CalculatorView {
 
         mainWindow.setVisible(true);
     }
+
+    public void writeToDisplay(String text) {
+        displayPanel.setDisplayText(text); // vom DisplayPanel
+    }
+
+    public String getInputFromDisplay() {
+        return displayPanel.getDisplayText(); // vom DisplayPanel
+    }
+
+    public void clearDisplay() {
+        displayPanel.clearDisplay(); // vom DisplayPanel
+    }
+
+    public void showErrorMessage(String errorMessage) {
+        JOptionPane.showMessageDialog(mainWindow, errorMessage);
+    }
+
+
 }
