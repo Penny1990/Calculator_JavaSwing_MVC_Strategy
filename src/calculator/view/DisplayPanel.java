@@ -18,6 +18,8 @@ public class DisplayPanel extends JPanel {
 
         setLayout(new BorderLayout());
         add(txtDisplay, BorderLayout.CENTER);
+        setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 30));
+
     }
 
     public void setDisplayText(String text) {

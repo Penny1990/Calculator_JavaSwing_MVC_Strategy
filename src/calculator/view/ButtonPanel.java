@@ -11,9 +11,10 @@ public class ButtonPanel extends JPanel {
 
     public ButtonPanel(DisplayPanel displayPanel) {
         this.displayPanel = displayPanel;
-        setLayout(new GridLayout(4,4));
+        setLayout(new GridLayout(4,4,7,7));
         initButtons();
         addButtonsToPanel();
+        setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
     }
 
     private void initButtons() {
@@ -25,6 +26,7 @@ public class ButtonPanel extends JPanel {
             numberButtons[i].setFocusable(false); // Button Hervorhebung weg nehmen
             numberButtons[i].addActionListener(e -> displayPanel.setDisplayText(displayPanel.getDisplayText()
                     + e.getActionCommand()));
+            CalculatorView.applyStyle(numberButtons[i]);
         }
 
         btnAddition = createButton("+");
@@ -34,7 +36,16 @@ public class ButtonPanel extends JPanel {
         btnEquals = createButton("=");
         btnSeperator = createButton(".");
 
-        // TODO: Seperator Listener hinzufügen, noch funktioniert der Punkt nicht
+        btnSeperator.addActionListener(event -> {
+            String text = displayPanel.getDisplayText();
+            if (!text.contains(".")) {
+                if (text.isEmpty()) {
+                    displayPanel.setDisplayText("0.");
+                } else {
+                    displayPanel.setDisplayText(text + ".");
+                }
+            }
+        });
 
     }
 
@@ -42,6 +53,8 @@ public class ButtonPanel extends JPanel {
         JButton button = new JButton(text);
         button.setFont(new Font("Comic Sans", Font.BOLD, 30));
         button.setFocusable(false);
+        CalculatorView.applyStyle(button);
+
         return button;
     }
 

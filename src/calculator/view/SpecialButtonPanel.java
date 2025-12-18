@@ -9,8 +9,9 @@ public class SpecialButtonPanel extends JPanel {
 
     public SpecialButtonPanel(DisplayPanel displayPanel) {
         this.displayPanel = displayPanel;
-        setLayout(new FlowLayout());
+        setLayout(new GridLayout(1, 2, 5, 0));
         initSpecialButtons();
+        setBorder(BorderFactory.createEmptyBorder(0, 30, 30, 30));
     }
 
     public void initSpecialButtons() {
@@ -26,6 +27,7 @@ public class SpecialButtonPanel extends JPanel {
         JButton button = new JButton(text);
         button.setFont(CalculatorView.DEFAULT_FONT);
         button.setFocusable(false);
+        CalculatorView.applyStyle(button);
         return button;
     }
 }
