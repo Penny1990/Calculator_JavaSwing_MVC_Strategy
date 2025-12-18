@@ -33,6 +33,9 @@ public class ButtonPanel extends JPanel {
         btnDivision = createButton("/");
         btnEquals = createButton("=");
         btnSeperator = createButton(".");
+
+        // TODO: Seperator Listener hinzufügen, noch funktioniert der Punkt nicht
+
     }
 
     private JButton createButton(String text) {
@@ -60,6 +63,5 @@ public class ButtonPanel extends JPanel {
         btnMultiply.addActionListener(listener);
         btnDivision.addActionListener(listener);
         btnEquals.addActionListener(listener);
-        btnSeperator.addActionListener(listener);
     }
 }
