@@ -1,5 +1,7 @@
 package calculator;
 
+import calculator.model.AdditionStrategy;
+import calculator.model.CalculatorModel;
 import calculator.view.CalculatorView;
 
 import javax.swing.*;
@@ -35,6 +37,11 @@ public class CalculatorApp {
 
          */
 
+
+        // TEST MODEL
+        // CalculatorModel calculatorModel = new CalculatorModel();
+        // calculatorModel.setArithmeticStrategy(new AdditionStrategy());
+        // System.out.println(calculatorModel.calculateResult(2,3));
 
     }
 }
