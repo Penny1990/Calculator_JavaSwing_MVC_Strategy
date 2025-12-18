@@ -14,6 +14,7 @@ public class CalculatorController {
     public CalculatorController(CalculatorView calculatorView, CalculatorModel calculatorModel) {
         this.calculatorView = calculatorView;
         this.calculatorModel = calculatorModel;
+        calculatorView.setArithmeticButtonClickListener(new ArithmeticButtonClickListener());
     }
 
     private double calculateResult() {
@@ -41,6 +42,7 @@ public class CalculatorController {
             if(event.getActionCommand().equals("=")) {  // wenn '='
                 double result = calculateResult();  // -> rechne mit 'calculateResult' und speicher in 'result'
                 calculatorView.writeToDisplay(String.valueOf(result));  // Ergebnis ins Display schreiben
+                return;
             }
 
             String input = calculatorView.getInputFromDisplay();

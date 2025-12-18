@@ -2,6 +2,7 @@ package calculator.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class CalculatorView {
     public static final Font DEFAULT_FONT = new Font("Comic Sans", Font.BOLD, 30);
@@ -24,8 +25,8 @@ public class CalculatorView {
         mainWindow.setBackground(new Color(104,139,173));
 
         displayPanel = new DisplayPanel();
-        buttonPanel = new ButtonPanel();
-        specialButtonPanel = new SpecialButtonPanel();
+        buttonPanel = new ButtonPanel(displayPanel);
+        specialButtonPanel = new SpecialButtonPanel(displayPanel);
 
         mainWindow.add(displayPanel,BorderLayout.NORTH);
         mainWindow.add(buttonPanel, BorderLayout.CENTER);
@@ -44,6 +45,10 @@ public class CalculatorView {
 
     public void clearDisplay() {
         displayPanel.clearDisplay(); // vom DisplayPanel
+    }
+
+    public void setArithmeticButtonClickListener(ActionListener listener) {
+        buttonPanel.setArithmeticButtonClickListener(listener);
     }
 
     public void showErrorMessage(String errorMessage) {

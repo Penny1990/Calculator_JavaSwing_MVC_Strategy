@@ -2,12 +2,15 @@ package calculator.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class ButtonPanel extends JPanel {
+    private DisplayPanel displayPanel;
     private JButton[] numberButtons;
     private JButton btnAddition, btnSubtraction, btnMultiply, btnDivision, btnEquals, btnSeperator;
 
-    public ButtonPanel() {
+    public ButtonPanel(DisplayPanel displayPanel) {
+        this.displayPanel = displayPanel;
         setLayout(new GridLayout(4,4));
         initButtons();
         addButtonsToPanel();
@@ -20,8 +23,8 @@ public class ButtonPanel extends JPanel {
             numberButtons[i] = new JButton(String.valueOf(i));
             numberButtons[i].setFont(CalculatorView.DEFAULT_FONT);
             numberButtons[i].setFocusable(false); // Button Hervorhebung weg nehmen
-
-            // TODO: Alle Buttons brauchen ihren Listener
+            numberButtons[i].addActionListener(e -> displayPanel.setDisplayText(displayPanel.getDisplayText()
+                    + e.getActionCommand()));
         }
 
         btnAddition = createButton("+");
@@ -36,9 +39,6 @@ public class ButtonPanel extends JPanel {
         JButton button = new JButton(text);
         button.setFont(new Font("Comic Sans", Font.BOLD, 30));
         button.setFocusable(false);
-
-        // TODO: Listener für die Buttons hinzufügen
-
         return button;
     }
 
@@ -49,11 +49,17 @@ public class ButtonPanel extends JPanel {
                 numberButtons[1], numberButtons[2], numberButtons[3], btnSubtraction,
                 btnSeperator, numberButtons[0], btnEquals, btnAddition
         };
-
         for (JButton btn : buttons) {
             add(btn);
         }
+    }
 
-        // TODO: Spezialbuttons brauchen Listener
+    public void setArithmeticButtonClickListener(ActionListener listener) {
+        btnAddition.addActionListener(listener);
+        btnSubtraction.addActionListener(listener);
+        btnMultiply.addActionListener(listener);
+        btnDivision.addActionListener(listener);
+        btnEquals.addActionListener(listener);
+        btnSeperator.addActionListener(listener);
     }
 }

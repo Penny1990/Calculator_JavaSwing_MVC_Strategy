@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.controller.CalculatorController;
 import calculator.model.AdditionStrategy;
 import calculator.model.CalculatorModel;
 import calculator.view.CalculatorView;
@@ -26,7 +27,7 @@ public class CalculatorApp {
         */
 
         // Methodenreferenz möglich:
-        SwingUtilities.invokeLater(CalculatorView::new);
+        // SwingUtilities.invokeLater(CalculatorView::new);
 
         /*
 
@@ -42,6 +43,9 @@ public class CalculatorApp {
         // CalculatorModel calculatorModel = new CalculatorModel();
         // calculatorModel.setArithmeticStrategy(new AdditionStrategy());
         // System.out.println(calculatorModel.calculateResult(2,3));
+
+        // TEST CONTROLLER
+        SwingUtilities.invokeLater(() -> new CalculatorController(new CalculatorView(), new CalculatorModel()));
 
     }
 }

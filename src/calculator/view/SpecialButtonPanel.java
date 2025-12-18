@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SpecialButtonPanel extends JPanel {
+    private DisplayPanel displayPanel;
     private JButton btnDelete, btnClear;
 
-    public SpecialButtonPanel() {
+    public SpecialButtonPanel(DisplayPanel displayPanel) {
+        this.displayPanel = displayPanel;
         setLayout(new FlowLayout());
         initSpecialButtons();
     }
@@ -14,6 +16,8 @@ public class SpecialButtonPanel extends JPanel {
     public void initSpecialButtons() {
         btnDelete = createButton("CE");
         btnClear = createButton("C");
+        btnClear.addActionListener((event) -> displayPanel.clearDisplay());
+        btnDelete.addActionListener((event) -> displayPanel.deleteCharacter());
         add(btnDelete);
         add(btnClear);
     }
@@ -22,9 +26,6 @@ public class SpecialButtonPanel extends JPanel {
         JButton button = new JButton(text);
         button.setFont(CalculatorView.DEFAULT_FONT);
         button.setFocusable(false);
-
-        // TODO: Listener für die Buttons hinzufügen
-
         return button;
     }
 }
